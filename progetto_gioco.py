@@ -52,7 +52,25 @@ class progetto_gioco(arcade.Window):
         self.player.center_x += change_x
         self.player.center_y += change_y
 
-
+    def on_key_press(self, key, key_modifiers):
+        if key == arcade.key.W:
+            self.up_pressed = True
+        elif key == arcade.key.A:
+            self.left_pressed = True
+        elif key == arcade.key.S:
+            self.down_pressed = True
+        elif key == arcade.key.D:
+            self.right_pressed = True
+    
+    def on_key_release(self, key, key_modifiers):
+        if key == arcade.key.W:
+            self.up_pressed = False
+        elif key == arcade.key.A:
+            self.left_pressed = False
+        elif key == arcade.key.S:
+            self.down_pressed = False
+        elif key == arcade.key.D:
+            self.right_pressed = False
 
 
 def main():
