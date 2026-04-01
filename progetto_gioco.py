@@ -52,6 +52,22 @@ class progetto_gioco(arcade.Window):
         self.player.center_x += change_x
         self.player.center_y += change_y
 
+        if change_x < 0:
+            self.player.scale = (-1, 1)
+        if change_x > 0:
+            self.player.scale = (1, 1)
+
+        if self.player.center_x < 0:
+            self.player.center_x = 0
+        elif self.player.center_x > WIDTH:
+            self.player.center_x = WIDTH
+        
+        if self.player.center_y < 0:
+            self.player.center_y = 0
+        elif self.player.center_y > HEIGHT:
+            self.player.center_y = HEIGHT
+
+
     def on_key_press(self, key, key_modifiers):
         if key == arcade.key.W:
             self.up_pressed = True
